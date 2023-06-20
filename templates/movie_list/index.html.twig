@@ -5,7 +5,7 @@
 {% block body %}
     <ul>
         {% for movie in movies %}
-            <li>{{ movie.title }}</li>
+            <li><a href="{{ path('app_movie_details', {'id': movie.id}) }}">{{ movie.title }}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}

@@ -5,5 +5,9 @@
 {% block body %}
     <h2>{{ movie.title }}</h2>
     Date de sortie: {{  movie.releasedAt|format_datetime("full", "none", locale="fr") }}
-    Genres: {{ movie.genres|join(', ') }}
+    Genres:
+    {% for genre in movie.genres %}
+        {{ genre.name }}
+        {% if not loop.last %}, {% endif %}
+    {% endfor %}
 {% endblock %}
