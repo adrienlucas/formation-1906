@@ -4,6 +4,11 @@
 
 {% block body %}
     <h2>{{ movie.title }}</h2>
+    {%if movie_poster is empty or movie_poster == "N/A" %}
+        <strong>No poster</strong>
+    {%  else %}
+        <img src="{{ movie_poster }}" />
+    {% endif %}
     Date de sortie: {{  movie.releasedAt|format_datetime("full", "none", locale="fr") }}
     Genres:
     {% for genre in movie.genres %}

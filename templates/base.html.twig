@@ -28,6 +28,15 @@
                 </div>
             </div>
         </nav>
+        {% for flashType, flashMessages in app.flashes() %}
+            {% for message in flashMessages %}
+                <div class="alert alert-{{ flashType }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+        <div class="container">
         {% block body %}{% endblock %}
+        </div>
     </body>
 </html>

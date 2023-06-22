@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Create a new movie - ' ~ parent() %}
+
+{% block body %}
+{#    {{ form(movieForm) }}#}
+    {{ form_start(movieForm) }}
+{#        {{ form_row(movieForm.title) }}#}
+{#        <div class="mb-3 row">#}
+{#                {{ form_label(movieForm.title) }}#}
+{#                {{ form_errors(movieForm.title) }}#}
+{#                {{ form_widget(movieForm.title) }}#}
+{#        </div>#}
+{#        {{ form_row(movieForm.releasedAt) }}#}
+{#        {{ form_row(movieForm.plot) }}#}
+{#        {{ form_row(movieForm.genres) }}#}
+{#        {{ form_row(movieForm.submit) }}#}
+        {{ form_widget(movieForm) }}
+        <button type="submit" class="btn btn-primary">Créer le film</button>
+    {{ form_end(movieForm) }}
+{% endblock %}
